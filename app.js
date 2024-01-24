@@ -12,20 +12,13 @@ function checkPassword() {
     widthChecker.style.width = "none";
     widthChecker.style.background = "none";
     return;
-  } else if (value.length <= 4) {
-    strength = 1;
-  } else if (value.length <= 8) {
-    strength = 2;
-  } else if (value.length <= 12) {
-    strength = 3;
-  } else {
-    strength = 4;
-  }
+  } else if (value.length <= 4) { strength = 1;
+  } else if (value.length <= 8) { strength = 2;
+  } else if (value.length <= 12) { strength = 3;
+  } else { strength = 4; }
 
   const rareCharacters = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
-  if (rareCharacters.test(value)) {
-    strength += 1;
-  }
+  if (rareCharacters.test(value)) { strength += 1; }
 
   switch (strength) {
     case 1:
